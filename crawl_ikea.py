@@ -8,7 +8,6 @@ import psycopg2
 import traceback
 import re
 import sys
-from prompt_toolkit.layout import dimension
 
 class crawl(object):
     def __init__(self, query, min_price, max_price):
