@@ -39,7 +39,7 @@ class crawl(object):
             soup = BeautifulSoup(self.get_html(_url, _uenc_params), 
                                  "html.parser")
             body = soup.body
-            items, items2 = None, None
+            items, item = None, None
             try:
                 list = body.find("div", {"id": "productsContainer"})
                 items = list.find_all("div", {"class": "productContainer "})
