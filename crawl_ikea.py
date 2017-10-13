@@ -73,7 +73,10 @@ class crawl(object):
                             b2 = s2.body
                             i2 = b2.find("div", {"class", "itemNumber"})
                             _pr_code = i2.find("div", {"id": "itemNumber"})
-                            pr_code = _pr_code.text
+                            try:
+                                pr_code = _pr_code.text
+                            except:
+                                pass
                         img = item.find("img")
                         price_span = item.find("span", {"class": "prodPrice"})
                         ps = re.sub(r"\s+", "", item.select("span.prodPrice")[0].text)
@@ -107,7 +110,10 @@ class crawl(object):
                     b2 = s2.body
                     i2 = b2.find("div", {"class", "itemNumber"})
                     _pr_code = i2.find("div", {"id": "itemNumber"})
-                    pr_code = _pr_code.text
+                    try:
+                        pr_code = _pr_code.text
+                    except:
+                        pass
                 _img = img_div.find("img", {"id": "productImg"})
                 img = self.main_url+_img['src'] if _img else self.main_url 
                 price_span = item.find("span", {"id": "price1"})
