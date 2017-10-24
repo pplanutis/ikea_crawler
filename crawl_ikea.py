@@ -2,7 +2,6 @@
 
 from bs4 import BeautifulSoup
 import urllib
-from utils_mailer import send_file
 from datetime import datetime
 import psycopg2
 import traceback
